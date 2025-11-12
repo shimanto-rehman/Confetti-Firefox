@@ -1,0 +1,3 @@
+cd 'C:\Users\rahman.obaydur\Downloads\confetti-extension\Confetti Extension'; if (Test-Path icon.png) { Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile("$PWD\icon.png"); Write-Host "Icon size: $($img.Width)x$($img.Height) pixels"; $img.Dispose() }
+
+Remove-Item confetti-extension.xpi -Force -ErrorAction SilentlyContinue; Compress-Archive -Path manifest.json,content.js,confetti.js,icon.png -DestinationPath confetti-extension.zip -Force; Rename-Item confetti-extension.zip confetti-extension.xpi; Write-Host "✅ XPI created successfully!"; Add-Type -AssemblyName System.IO.Compression.FileSystem; Write-Host "`nFiles in XPI:"; [System.IO.Compression.ZipFile]::OpenRead("$PWD\confetti-extension.xpi").Entries.FullName
