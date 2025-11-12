@@ -1,13 +1,37 @@
-// Confetti Extension - Press Ctrl+C to trigger confetti
+// Confetti Extension - Cross-platform shortcut to trigger confetti
 console.log('🎉 Confetti Extension Active!');
 
-// Listen for Ctrl+C keyboard shortcut
+// Detect whether we are running on macOS (where the Option key maps to Alt)
+const isMacPlatform = (() => {
+  if (typeof navigator === 'undefined') return false;
+  const platform = navigator.platform || navigator.userAgentData?.platform || '';
+  return platform.toLowerCase().includes('mac');
+})();
+
+// Helper: determine whether the confetti shortcut was pressed
+function isConfettiShortcut(event) {
+  if (event.code !== 'KeyZ') {
+    return false;
+  }
+
+  const altLikePressed = event.altKey ||
+    (typeof event.getModifierState === 'function' && event.getModifierState('AltGraph'));
+
+  // macOS → Option + Z (no other modifiers)
+  if (isMacPlatform) {
+    return altLikePressed && !event.ctrlKey && !event.metaKey && !event.shiftKey;
+  }
+
+  // Windows/Linux → Alt + Z (no other modifiers)
+  return altLikePressed && !event.ctrlKey && !event.metaKey && !event.shiftKey;
+}
+
+// Listen for the keyboard shortcut
 document.addEventListener('keydown', function(event) {
-  // Check if Ctrl+C is pressed
-  if (event.altKey && (event.key === 'z' || event.key === 'Z')) {
+  if (isConfettiShortcut(event)) {
     event.preventDefault();
     
-    console.log('🎊 Ctrl+C pressed - Triggering confetti!');
+    console.log('🎊 Confetti shortcut detected - Triggering confetti!');
     
     // Check if confetti library is loaded
     if (typeof confetti === 'undefined') {
@@ -47,4 +71,4 @@ function fireConfetti() {
   });
 }
 
-console.log('✅ Ready! Press Ctrl+C on any page to see confetti!');
+console.log('✅ Ready! Press Alt+Z on Windows/Linux or Option+Z on macOS to see confetti!');

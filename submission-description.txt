@@ -1,0 +1,32 @@
+Confetti Shortcut - celebrate any page with a single key press.
+
+Overview
+Bring instant joy to the web. Press Alt+Z on Windows/Linux or Option+Z on macOS and watch two waves of colorful confetti sweep across the screen. Confetti Shortcut is lightweight, quick to install, and perfect for adding a moment of fun to demos, livestreams, classrooms, or remote team meetings.
+
+What you get
+- Dual confetti bursts that fire from both sides of the viewport to fill the page.  
+- Smart keyboard handling that adapts automatically: Alt+Z on Windows/Linux, Option+Z on macOS.  
+- A polished animation engine with bright colors, subtle physics, and smooth cleanup once particles fade.  
+- Zero menus or pop-ups, just a celebratory shortcut ready whenever you are.
+Privacy & permissions
+- Requires access to all sites only to listen for the keyboard shortcut and draw the confetti overlay.  
+- Does not collect, store, or transmit any personal data.  
+- No background scripts and no network requests; everything runs locally in your browser tab.
+
+How to use it
+1. Install the extension from this listing.  
+2. Open any tab.  
+3. Press Alt+Z (Windows/Linux) or Option+Z (macOS).  
+4. Enjoy the confetti cascade; it disappears automatically after a short celebration.
+
+Customization (for power users)
+If you load the extension temporarily from source, you can edit the included JavaScript files to change colors, particle counts, or keyboard shortcuts. Confetti Shortcut is built to be easy to tweak.
+
+Privacy & permissions
+• Requires access to all sites only to listen for the keyboard shortcut and draw the confetti overlay.  
+• Does not collect, store, or transmit any personal data.  
+• No background scripts and no network requests—everything runs locally in your browser tab.
+
+Need help?
+If you have questions or ideas, reach out to Shimanto Rehman at shimanto.rehman.bd@gmail.com.
+
